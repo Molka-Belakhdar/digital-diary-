@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my little world ✨</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Doodles decoratifs -->
+    <div class="doodle doodle-1">✨</div>
+    <div class="doodle doodle-2">🤎</div>
+    <div class="doodle doodle-3">⭐</div>
+    <div class="doodle doodle-4">🌙</div>
+
+    <!-- Hero Section avec vidéo -->
+    <section class="hero">
+        <div class="hero-container">
+            <!-- Vidéo à gauche -->
+            <div class="hero-video-wrapper">
+                
+                <video class="hero-video" autoplay muted loop playsinline>
+                    <source src="video-background.mp4" type="video/mp4">
+                </video>
+                
+            </div>
+            
+            <!-- Contenu à droite -->
+            <div class="hero-content">
+                <h1 class="hero-title">Mokka's digital diary</h1>
+                <p class="hero-subtitle">turning 21 m gonna cry :(</p>
+                <p class="hero-description">
+                    Coucou ! This is my digital diary :3 <br>
+                    GRWMs, birthdays, vlogs & whatever life throws at me '-' <br>
+                    Messy days, random glow-ups & memories I didn’t plan on keeping :^
+                </p>
+                
+                <!-- Stats optionnelles -->
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">20</span>
+                        <span class="stat-label">ans</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">souvenirs</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">:3</span>
+                        <span class="stat-label">vibes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">↓ scroll to see more</div>
+    </section>
+
+    <!-- Tags Navigation -->
+    <div class="tags-container">
+        <div class="tags">
+            <span class="tag" onclick="filterContent('random')">random 📹</span>
+        </div>
+    </div>
+
+    <!-- Masonry Gallery -->
+    <div class="gallery-container">
+        <div class="masonry" id="gallery">
+            
+            <!-- Card 1 - Video GRWM -->
+            <div class="card" data-category="random">
+                <video class="card-video" autoplay muted loop playsinline>
+                    <source src="prjt1.mp4" type="video/mp4">
+                </video>
+                
+                <div class="card-content">
+                    <div class="card-date">décembre 2023</div>
+                    <div class="card-title">morning routine | La cigale , Tabarka , Tunisie </div>
+                    <div class="card-description">un grwm random de ma matinée</div>
+                </div>
+            </div>
+
+            <!-- Card 2 - Photo -->
+            <div class="card" data-category="random">
+                <img src="mini-mokka.png" class="card-image" alt="">
+                
+                <div class="card-content">
+                    <div class="card-date">janivier 2009</div>
+                    <div class="card-title">vibes d'hiver + petite mokka</div>
+                    <div class="card-description">photo mood </div>
+                </div>
+            </div>
+
+            <!-- Card 3 - Birthday -->
+            <div class="card" data-category="random">
+                <img src="grwmphoto.png" class="card-image" alt="">
+                <div class="card-content">
+                    <div class="card-date">Djerba , Tunisie</div>
+                    <div class="card-title">GRWM</div>
+                    <div class="card-description"> contouring ? me ? 2026 never </div>
+                </div>
+            </div>
+
+            <!-- Card 4 - Montage -->
+            <div class="card" data-category="random">
+                <img src="raniouwmokka.png" class="card-image" alt="">
+                <div class="card-content">
+                    <div class="card-date">Paris , 2025</div>
+                    <div class="card-title">4life</div>
+                    <div class="card-description">meilleur moment</div>
+                </div>
+            </div>
+
+            <!-- Card 5 - GRWM -->
+            <div class="card" data-category="random">
+                <video class="card-video" autoplay muted loop playsinline>
+                    <source src="mok123.mp4" type="video/mp4">
+                </video>
+                <div class="card-content">
+                    <div class="card-date">Aout 2025</div>
+                    <div class="card-title"> :^</div>
+                    <div class="card-description">prep pour une soirée with raniouta , jayji et chédi </div>
+                </div>
+            </div>
+
+            <!-- Card 6 - Random -->
+            <div class="card" data-category="random">
+                <img src="sport.png" class="card-image" alt="">
+                <div class="card-content">
+                    <div class="card-date">Septembre 2025</div>
+                    <div class="card-title">day in my life</div>
+                    <div class="card-description">une journée normale , sporty </div>
+                </div>
+            </div>
+
+            <!-- Card 7 - Birthday -->
+            <div class="card" data-category="random">
+                <video class="card-video" autoplay muted loop playsinline>
+                    <source src="fr.mp4" type="video/mp4">
+                </video>
+                <div class="card-content">
+                    <div class="card-date">2025</div>
+                    <div class="card-title">real ones </div>
+                    <div class="card-description">je vous aime</div>
+                </div>
+            </div>
+
+            <!-- Card 8 - Random -->
+            <div class="card" data-category="random">
+                <img src="yoyomokka.png" class="card-image" alt="">
+                <div class="card-content">
+                    <div class="card-date">Aout 2025</div>
+                    <div class="card-title">with yoyota</div>
+                    <div class="card-description">bestie </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
