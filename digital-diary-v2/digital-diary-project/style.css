@@ -1,0 +1,437 @@
+/* ==================== GÉNÉRAL ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Indie Flower', cursive;
+    background-color: #f5f1e8;
+    color: #5a4a3a;
+    overflow-x: hidden;
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    background: #FEFFFE;
+    overflow: hidden;
+}
+
+/* Décorations background */
+.hero::before {
+    content: '✨';
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    font-size: 3rem;
+    opacity: 0.2;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero::after {
+    content: '🤎';
+    position: absolute;
+    bottom: 15%;
+    right: 8%;
+    font-size: 3rem;
+    opacity: 0.2;
+    animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.hero-container {
+    max-width: 1400px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Vidéo section */
+.hero-video-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+}
+
+.hero-video-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, #d4c5b0, #c9a87c);
+    border-radius: 25px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.hero-video {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    border: 8px solid #fff;
+}
+
+.hero-overlay {
+    display: none;
+}
+
+/* Contenu texte */
+.hero-content {
+    padding: 40px;
+    text-align: left;
+    position: relative;
+}
+
+.hero-title {
+    font-family: 'Indie Flower', cursive;
+    font-size: 5.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #000000;
+    line-height: 1.1;
+    position: relative;
+}
+
+.hero-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, #d4c5b0, transparent);
+    border-radius: 2px;
+}
+
+.hero-subtitle {
+    font-family: 'Indie Flower', cursive;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+.hero-description {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #000000;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-family: 'Indie Flower', cursive;
+    font-size: 2.5rem;
+    color: #c9a87c;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #a89584;
+    text-transform: lowercase;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.2rem;
+    color: #7a6a5a;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    z-index: 3;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Placeholder pour vidéo background */
+.video-placeholder {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.3rem;
+    background: linear-gradient(135deg, #e8dfd0, #d4c5b0);
+    border-radius: 20px;
+    border: 8px solid #fff;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    color: #5a4a3a;
+}
+
+.video-placeholder p {
+    margin: 10px 0;
+}
+
+/* ==================== NAVIGATION TAGS ==================== */
+.tags-container {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f5f1e8;
+}
+
+.tags {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.3rem;
+    padding: 8px 20px;
+    background: #fff;
+    border: 2px solid #d4c5b0;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+}
+
+.tag:hover {
+    background: #ede3d3;
+    transform: translateY(-2px);
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.15);
+}
+
+.tag.active {
+    background: #d4c5b0;
+    color: #fff;
+}
+
+/* ==================== MASONRY GALLERY ==================== */
+.gallery-container {
+    padding: 40px 20px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.masonry {
+    column-count: 3;
+    column-gap: 20px;
+}
+
+.card {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 3px 3px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.card:nth-child(3n+1) {
+    transform: rotate(-1deg);
+}
+
+.card:nth-child(3n+2) {
+    transform: rotate(1deg);
+}
+
+.card:hover {
+    transform: rotate(0deg) translateY(-5px) !important;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.15);
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.card-content {
+    padding: 15px 20px;
+}
+
+.card-date {
+    font-family: 'Indie Flower', cursive;
+    font-size: 0.9rem;
+    color: #a89584;
+    margin-bottom: 5px;
+}
+
+.card-title {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5rem;
+    color: #5a4a3a;
+    margin-bottom: 8px;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    color: #7a6a5a;
+    line-height: 1.4;
+}
+
+/* Effet tape/scotch sur les cartes */
+.card::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.6);
+    border-left: 1px dashed rgba(0,0,0,0.1);
+    border-right: 1px dashed rgba(0,0,0,0.1);
+    opacity: 0.7;
+}
+
+/* ==================== DOODLES DÉCORATIFS ==================== */
+.doodle {
+    position: fixed;
+    font-size: 2rem;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.doodle-1 { 
+    top: 20%; 
+    left: 10%; 
+    transform: rotate(-15deg); 
+}
+
+.doodle-2 { 
+    top: 40%; 
+    right: 8%; 
+    transform: rotate(20deg); 
+}
+
+.doodle-3 { 
+    bottom: 25%; 
+    left: 15%; 
+    transform: rotate(-10deg); 
+}
+
+.doodle-4 { 
+    top: 60%; 
+    right: 12%; 
+    transform: rotate(15deg); 
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 1024px) {
+    .masonry {
+        column-count: 2;
+    }
+    
+    .hero-container {
+        gap: 40px;
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 20px;
+    }
+    
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .hero-video-wrapper {
+        order: 1;
+    }
+    
+    .hero-content {
+        order: 2;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .hero-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hero-stats {
+        justify-content: center;
+    }
+    
+    .masonry {
+        column-count: 1;
+    }
+    
+    .tag {
+        font-size: 1.1rem;
+        padding: 6px 15px;
+    }
+}
